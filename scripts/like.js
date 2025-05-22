@@ -39,3 +39,10 @@ function setButtonText(heart, button) {
     );
   }
 }
+
+const closeButton = document.getElementById('modal-close-button');
+const modal = document.getElementById('modal-save');
+
+closeButton.addEventListener('click', () => {
+		modal.close(); // Закрываем диалоговое окно
+});
