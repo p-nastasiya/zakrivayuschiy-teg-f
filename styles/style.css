@@ -149,8 +149,9 @@ img {
 }
 
 .blurrcontrast:hover {
-	filter: sepia(1);
+  filter: blur(10px) contrast(2) sepia(1);
 }
+
 
 .orangcontrast:hover {
 	filter: hue-rotate(155deg);
@@ -172,6 +173,9 @@ img {
 		1px -1px 0 var(--watermark-shadow-color),
 		-1px 1px 0 var(--watermark-shadow-color),
 		1px 1px 0 var(--watermark-shadow-color);
+		@supports (text-stroke: 2px var(--text-stroke-color)) or (-webkit-text-stroke: 2px var(--text-stroke-color)) {
+			text-stroke: 2px var(--text-stroke-color);
+		}
 }
 
 p {
@@ -249,7 +253,6 @@ p {
 }
 
 .card__icon-button {
-	border: none;
 	background: none;
 	border: 2px solid transparent;
 	transition: border-color 0.3s ease;

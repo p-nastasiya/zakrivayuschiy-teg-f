@@ -12,22 +12,28 @@
 	/* толщина шрифта текста контента*/
 	--main-text-line-height: 21px;
 	--text-size: 18px;
-	/* размер шрифта */ /* Шрифт контента */
+	/* размер шрифта */
+	/* Шрифт контента */
 	--img-width: clamp(375px, 696px, 1240px);
 
 	--watermark-shadow-color: #fff;
 	--hardlight-color: #000;
-	--color-white: #fff; 
-	--text-color-white: #fff; /*белый текст кнопки*/
-	--text-color-black: #000; /*черный текст кнопки*/
-	--bg-buttom:#fff; /*фон кнопки*/
-	--bg-color: #000;  /*цвет псевдоэлемента наезжающего на кнопку*/
-	--highlight-color: #000;/*цвет тени кнопки*/
-	--border-buttom-color: #000; /*цвет рамки кнопки*/
+	--color-white: #fff;
+	--text-color-white: #fff;
+	/*белый текст кнопки*/
+	--text-color-black: #000;
+	/*черный текст кнопки*/
+	--bg-buttom: #fff;
+	/*фон кнопки*/
+	--bg-color: #000;
+	/*цвет псевдоэлемента наезжающего на кнопку*/
+	--highlight-color: #000;
+	/*цвет тени кнопки*/
+	--border-buttom-color: #000;
+	/*цвет рамки кнопки*/
 
 	--contour-color: #000;
 	--animation-fill-color: #FF0000;
 
 	--backround-image: url('../images/background.png');
 }
-
