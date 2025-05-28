@@ -147,11 +147,11 @@ img {
 }
 
 .blurrcontrast {
-  filter: blur(0px);
+  filter: blur(10px) contrast(2) sepia(1);
 }
 
 .blurrcontrast:hover {
-  filter: blur(10px) contrast(2) sepia(1);
+  filter: blur(1px) contrast(0) sepia(0);
 }
 
 
