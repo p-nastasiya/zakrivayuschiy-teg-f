@@ -133,17 +133,20 @@ img {
 }
 
 .greencontrast {
-	filter: invert(0), saturate(0);
-	transition: filter 2s;
+  filter: invert(0), saturate(0);
+  transition: filter 2s;
 }
 
 .greencontrast:hover {
-	filter: invert(0.7) saturate(3);
+  filter: invert(0.7) saturate(3);
 }
 
+.greencontrast:is(.monohromcontrast, .blurrcontrast) {
+  filter: invert(0.5) saturate(2);
+}
 
 .monohromcontrast {
-	filter: saturate(158%);
+  filter: saturate(158%);
 }
 
 .blurrcontrast {
@@ -154,14 +157,14 @@ img {
   filter: blur(1px) contrast(0) sepia(0);
 }
 
-
 .orangcontrast {
-	filter: hue-rotate(0);
+  filter: hue-rotate(0);
 }
 
 .orangcontrast:hover {
-	filter: hue-rotate(155deg);
+  filter: hue-rotate(155deg);
 }
+
 
 .watermark {
 	position: absolute;
