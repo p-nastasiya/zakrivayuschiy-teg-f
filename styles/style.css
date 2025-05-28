@@ -105,6 +105,7 @@ img {
 /* при наведении на картинку повышается контрастность */
 .mincontrast {
 	transition: 5s ease;
+	filter: contrast(0);
 }
 
 .mincontrast:hover {
@@ -143,13 +144,20 @@ img {
 
 .monohromcontrast {
 	filter: saturate(158%);
+}
 
+.blurrcontrast {
+  filter: blur(0px);
 }
 
 .blurrcontrast:hover {
   filter: blur(10px) contrast(2) sepia(1);
 }
 
+
+.orangcontrast {
+	filter: hue-rotate(0);
+}
 
 .orangcontrast:hover {
 	filter: hue-rotate(155deg);
