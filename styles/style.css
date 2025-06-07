@@ -1,26 +1,29 @@
+/* * {
+	outline: 1px red solid;
+} */
+
 .page {
 	display: flex;
 	flex-direction: column;
-	justify-self: center;
 	align-items: center;
 	font-family: var(--font-family), 'Inter-Variable', sans-serif;
 	min-inline-size: 320px;
 	min-block-size: 100dvb;
-	inline-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
 }
 
 .bg-gradient {
 	position: fixed;
 	object-fit: cover;
 	object-position: center;
-	background-image: var(--backround-image);
+	background-image: var(--backround-image),
+		repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
 	inline-size: 100%;
 	block-size: 100%;
 	z-index: -1;
 }
 
 .header {
-	font-family: var(--second-family);
+	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
 	border: 2px solid;
 	background: var(--color-white);
 	display: flex;
@@ -36,39 +39,31 @@
 }
 
 .header__main-title {
-	font-size: clamp(2.5rem, 5vw + 1rem, var(--header-name-font-size));
-	font-weight: var(--header-name-font-size);
-	margin-bottom: clamp(10px, 2vw, 20px);
+	font-size: var(--header-name-font-size);
+	/* font-weight: var(--header-name-font-); */
+	margin-bottom: 20px;
 	/* Отступ снизу */
 }
 
 .header__subtitle {
-	font-size: var(--header-subtitle-font-size);
-	font-weight: var(--text-font-weight);
+	font-size: var(--header-subtitle-font-size, clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem));
+	font-weight: var(--text-font-weight, 400);
 	text-transform: uppercase;
 }
 
 .content {
 	margin-top: 50px;
+	inline-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
 }
 
 .card {
 	display: flex;
 	flex-direction: column;
-	background: var(--color-white);
-	border: 2px solid var(--border-buttom-color);
-	margin-top: 50px;
+	background: var(--color-white, #fff);
+	border: 2px solid var(--border-buttom-color, #000);
+	margin-top: 51px;
 	height: auto;
 	max-width: var(--img-width);
-}
-
-
-.card-image:hover {
-	cursor: pointer;
-}
-
-.card-image:active {
-	cursor: pointer;
 }
 
 
@@ -82,13 +77,22 @@
 
 .image-box {
 	position: relative;
+	max-height: 698px;
 }
 
-img {
+.card-image:hover {
+	cursor: pointer;
+}
+
+.card-image:active {
+	cursor: pointer;
+}
+
+.card-image {
 	max-width: var(--img-width);
 	width: -webkit-fill-available;
-	border-bottom: 2px solid;
-	border-top: 2px solid;
+	border-bottom: 2px solid var(--contour-color, #000);
+	border-top: 2px solid var(--contour-color, #000);
 }
 
 /* при клике на картинке расстворяется фильтр */
@@ -133,36 +137,32 @@ img {
 }
 
 .greencontrast {
-  filter: invert(0), saturate(0);
-  transition: filter 2s;
+	filter: invert(0), saturate(0);
+	transition: filter 2s;
 }
 
 .greencontrast:hover {
-  filter: invert(0.7) saturate(3);
+	filter: invert(0.7) saturate(3);
 }
 
 .greencontrast:is(.monohromcontrast, .blurrcontrast) {
-  filter: invert(0.5) saturate(2);
+	filter: invert(0.5) saturate(2);
 }
 
 .monohromcontrast {
-  filter: saturate(158%);
+	filter: saturate(160%);
 }
 
 .blurrcontrast {
-  filter: blur(10px) contrast(2) sepia(1);
-}
-
-.blurrcontrast:hover {
-  filter: blur(1px) contrast(0) sepia(0);
+	filter: blur(10px) contrast(2) sepia(1);
 }
 
 .orangcontrast {
-  filter: hue-rotate(0);
+	filter: hue-rotate(0);
 }
 
 .orangcontrast:hover {
-  filter: hue-rotate(155deg);
+	filter: hue-rotate(155deg);
 }
 
 
@@ -171,36 +171,40 @@ img {
 	padding: 0;
 	top: 25px;
 	right: 25px;
-	font-family: var(--second-family);
-	font-size: var(--buttom-text-font-size);
-	font-weight: var(--main-title-font-weight);
-	line-height: 14px;
+	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
+	font-size: var(--buttom-text-font-size, 14px);
+	font-weight: var(--main-title-font-weight, 700);
 	opacity: 50%;
 	mix-blend-mode: hard-light;
 	text-shadow:
-		-1px -1px 0 var(--watermark-shadow-color),
-		1px -1px 0 var(--watermark-shadow-color),
-		-1px 1px 0 var(--watermark-shadow-color),
-		1px 1px 0 var(--watermark-shadow-color);
-		@supports (text-stroke: 2px var(--text-stroke-color)) or (-webkit-text-stroke: 2px var(--text-stroke-color)) {
-			text-stroke: 2px var(--text-stroke-color);
-		}
+		-1px -1px 0 var(--watermark-shadow-color, #fff),
+		1px -1px 0 var(--watermark-shadow-color, #fff),
+		-1px 1px 0 var(--watermark-shadow-color, #fff),
+		1px 1px 0 var(--watermark-shadow-color, #fff);
+
+	@supports (text-stroke: 1px var(--text-color-white)) or (-webkit-text-stroke: 1px var(--text-color-white)) {
+		-webkit-text-stroke: 1px var(--text-color-white, #fff);
+		text-stroke: 1px var(--text-color-white, #fff);
+		text-shadow: none;
+	}
 }
 
-p {
+.card-content {
 	font-family: var(--font-family);
 	font-size: var(--text-size);
 	line-height: var(--main-text-line-height);
-	padding: 25px 23px;
+	padding: 25px 25px 27px 25px;
 }
 
 .card__add {
 	padding-top: 0px;
+	padding-bottom: 25px;
 }
 
 .button-container {
 	height: 38px;
 	display: flex;
+	gap: 6px;
 	background: transparent;
 	justify-content: end;
 	margin: 0 25px 25px 0;
@@ -209,11 +213,11 @@ p {
 .btn {
 	position: relative;
 	display: inline-block;
-	color: var(--text-color-black);
+	color: var(--text-color-black, #000);
 	/* Цвет текста по умолчанию */
-	font-family: var(--second-family);
-	font-size: var(--buttom-text-font-size);
-	border: 2px solid var(--border-buttom-color);
+	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
+	font-size: var(--buttom-text-font-size, 14px);
+	border: 2px solid var(--border-buttom-color, #000);
 	overflow: hidden;
 	/* Для скрытия псевдоэлемента */
 }
@@ -241,7 +245,7 @@ p {
 	z-index: 2;
 	mix-blend-mode: difference;
 	transition: color 0.5s ease-in-out;
-	color: var(--color-white);
+	color: var(--color-white, #fff);
 }
 
 .floppy-button {
@@ -249,12 +253,13 @@ p {
 	z-index: 2;
 	mix-blend-mode: difference;
 	transition: color 0.5s ease-in-out;
-	color: var(--color-white);
+	color: var(--color-white, #fff);
 	flex-shrink: 0;
+	border: none;
 }
 
 .btn:hover .button__text {
-	color: var(--text-color-white);
+	color: var(--text-color-white, #fff);
 }
 
 .card__like-button-icon {
@@ -266,6 +271,8 @@ p {
 	border: 2px solid transparent;
 	transition: border-color 0.3s ease;
 	height: 38px;
+	width: 38px;
+	justify-items: center;
 }
 
 .card__icon-button:focus {
@@ -273,7 +280,7 @@ p {
 }
 
 .card__icon-button:focus-visible {
-	border-color: var(--border-buttom-color);
+	border-color: var(--border-buttom-color, #000);
 }
 
 .card__like-button {
@@ -282,191 +289,81 @@ p {
 
 .btn:focus {
 	outline: none;
-	box-shadow: 2px 2px 0px var(--contour-color);
+	box-shadow: 2px 2px 0px var(--contour-color, #000);
 	transition: box-shadow 0.3s ease;
 }
 
-/* сердце */
-.like-icon {
-	margin-bottom: -2px;
-}
-
-@keyframes scaleHeart {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.25);
-	}
-
-	100% {
-		transform: scale(1);
-	}
-}
-
-/* Анимация пульсации сердца */
-@keyframes scaleHeart {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.25);
-	}
-
-	100% {
-		transform: scale(1);
-	}
-}
-
-/* Анимация вспышки искр */
-@keyframes sparkEffect {
-	0% {
-		opacity: 0;
-	}
-
-	50% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-	}
-}
-
-/* Базовые стили для сердца */
-.heart {
-	transition: fill 0.3s linear;
-}
-
-.sparks {
-	opacity: 0;
-	fill: var(--animation-fill-color);
-}
-
-.contour {
-	fill: var(--contour-color);
-	transition: fill 0.1s linear;
-}
-
-.core {
-	fill: transparent;
-	transition: fill 0.3s linear;
-}
-
-.main-body {
-	fill: transparent;
-	transition: fill 0.3s linear 0.05s;
-}
-
-/* Состояния при наведении */
-.like-icon:hover .core {
-	fill: var(--contour-color);
-}
-
-.like-icon:hover .main-body {
-	fill: var(--contour-color);
-	transition-delay: 0.05s;
-}
-
-/* Состояния при активном нажатии */
-.like-icon:active .core {
-	fill: var(--animation-fill-color);
-}
-
-.like-icon:active .main-body {
-	fill: var(--animation-fill-color);
-}
-
-/* Состояние "лайкнуто" */
-.like-icon.is-liked .heart {
-	animation: scaleHeart 0.1s ease-in;
-	transform-origin: center;
-}
-
-.like-icon.is-liked .contour {
-	fill: var(--animation-fill-color);
-}
-
-.like-icon.is-liked .core {
-	fill: var(--animation-fill-color);
-}
-
-.like-icon.is-liked .main-body {
-	fill: var(--animation-fill-color);
-}
-
-.like-icon.is-liked .sparks {
-	animation: sparkEffect 0.3s ease-in 0.3s;
-}
 
 .card__save-button {
-	inline-size: 335px;
+	inline-size: 339px;
 	min-height: 55px;
-	margin-top: 50px;
+	margin-top: 51px;
 	margin-bottom: 100px;
 	display: flex;
 	align-items: center;
 	justify-self: center;
 	justify-content: center;
 	gap: 8px;
-	background: var(--color-white);
-	border: 2px solid var(--border-buttom-color);
+	background: var(--color-white, #fff);
+	border: 2px solid var(--border-buttom-color, #000);
 }
 
 /* Диалоговое окно */
-dialog {
-	position: fixed;
-	margin: 0;
-	padding: 25px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	/* Центрируем диалог */
+dialog:open {
+	/* padding:17px; */
 	z-index: 1;
-	font-family: var(--second-family);
+	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
 	font-weight: var(--main-title-font-weight);
-	font-size: var(--buttom-text-font-size);
+	font-size: var(--buttom-text-font-size, 14px);
 	justify-items: center;
 	align-content: center;
-	border: 2px solid var(--border-buttom-color);
-	width: 357px;
-	height: 193px;
+	border: none;
+}
+
+.modal {
+	border: 2px solid var(--border-buttom-color, #000);
+	padding: 0;
+	margin-left: clamp(1.063rem, 49.39vw - 10.513rem, 33.938rem);
+	margin-right: clamp(1.063rem, 49.39vw - 10.513rem, 33.938rem);
 }
 
 dialog::backdrop {
 	background-color: rgba(0, 0, 0, 0.75);
-	z-index: 0;
 }
 
-.modal__content:not([open]) {
+.modal__content {
+	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
+	font-size: var(--buttom-text-font-size, 14px);
+	padding: 30px clamp(2.5rem, -0.939vw + 2.72rem, 1.875rem);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 30px;
+}
+
+.modal__content-grupp {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	gap: 12px;
-	width: 293px;
-	font-weight: bold;
+	gap: 20px;
 }
 
 .modal-text {
 	line-height: 150%;
 	text-transform: uppercase;
-	color: var(--text-color-black);
+	color: var(--text-color-black, #000);
 	padding: 0;
-	width: 234px;
+	width: clamp(12.375rem, 3.38vw + 11.583rem, 14.625rem);
 }
 
 .modal-close-button {
 	border: 2px solid var(--border-buttom-color);
-	margin-top: 25px;
-	width: 293px;
+	width: 100%;
 	height: 38px;
 	background-color: transparent;
 }
 
 @media (width <=375px) {
-	.page {
+		.page {
 		width: 100%;
 		max-width: 375px;
 	}
@@ -487,18 +384,24 @@ dialog::backdrop {
 		max-width: 375px;
 		margin-left: 0;
 		margin-right: 0;
+		margin-top: 50px;
 	}
 
 	.title {
 		padding: 5px 10px;
 		line-height: 21px;
 	}
+	.image-box {
+		max-height: 373px;
+	}
+	
+	.watermark {
+		right: 12px;
+	}
 
-	img {
-		block-size: var(--img-width);
+	.card-image {
 		width: 100%;
 		height: 100%;
-		max-width: 375px;
 	}
 
 	.card__save-button {
@@ -517,14 +420,7 @@ dialog::backdrop {
 		height: 28px;
 	}
 
-	.watermark {
-		right: 13px;
-	}
 }
 
 @media (min-width: 376px) and (max-width: 1440px) {
-	.watermark {
-		top: calc(79px - (21px * ((100vw - 375px) / (1440 - 375))));
-		right: calc(12px + (13px * ((100vw - 375px) / (1440 - 375))));
-	}
 }

@@ -6,7 +6,7 @@
 	--header-subtitle-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 	--buttom-text-font-size: 14px;
 	/* размер шрифта на кнопках */
-	--main-title-font-weight: 785;
+	--main-title-font-weight: 700;
 	/* толщина шрифта заголовков контента*/
 	--text-font-weight: 400;
 	/* толщина шрифта текста контента*/
@@ -14,7 +14,7 @@
 	--text-size: 18px;
 	/* размер шрифта */
 	/* Шрифт контента */
-	--img-width: clamp(375px, 696px, 1240px);
+	--img-width: clamp(375px, 700px, 1240px);
 
 	--watermark-shadow-color: #fff;
 	--hardlight-color: #000;

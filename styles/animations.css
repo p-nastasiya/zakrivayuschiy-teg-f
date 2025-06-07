@@ -9,3 +9,103 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+/* сердце */
+.like-icon {
+	margin-bottom: -2px;
+}
+
+/* Анимация пульсации сердца */
+@keyframes scaleHeart {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.25);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Анимация вспышки искр */
+@keyframes sparkEffect {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+/* Базовые стили для сердца */
+.heart {
+	transition: fill 0.3s linear;
+}
+
+.sparks {
+	opacity: 0;
+	fill: var(--animation-fill-color);
+}
+
+.contour {
+	fill: var(--contour-color);
+	transition: fill 0.1s linear;
+}
+
+.core {
+	fill: transparent;
+	transition: fill 0.3s linear;
+}
+
+.main-body {
+	fill: transparent;
+	transition: fill 0.3s linear 0.05s;
+}
+
+/* Состояния при наведении */
+.like-icon:hover .core {
+	fill: var(--contour-color);
+}
+
+.like-icon:hover .main-body {
+	fill: var(--contour-color);
+	transition-delay: 0.05s;
+}
+
+/* Состояния при активном нажатии */
+.like-icon:active .core {
+	fill: var(--animation-fill-color);
+}
+
+.like-icon:active .main-body {
+	fill: var(--animation-fill-color);
+}
+
+/* Состояние "лайкнуто" */
+.like-icon.is-liked .heart {
+	animation: scaleHeart 0.1s ease-in 0.3s;
+	transform-origin: center;
+}
+
+.like-icon.is-liked .contour {
+	fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .core {
+	fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .main-body {
+	fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .sparks {
+	animation: sparkEffect 0.3s ease-in 0.3s;
+}
