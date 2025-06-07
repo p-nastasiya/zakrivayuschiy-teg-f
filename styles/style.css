@@ -363,7 +363,7 @@ dialog::backdrop {
 }
 
 @media (width <=375px) {
-		.page {
+	.page {
 		width: 100%;
 		max-width: 375px;
 	}
@@ -391,10 +391,11 @@ dialog::backdrop {
 		padding: 5px 10px;
 		line-height: 21px;
 	}
+
 	.image-box {
 		max-height: 373px;
 	}
-	
+
 	.watermark {
 		right: 12px;
 	}
@@ -420,7 +421,4 @@ dialog::backdrop {
 		height: 28px;
 	}
 
-}
-
-@media (min-width: 376px) and (max-width: 1440px) {
 }
