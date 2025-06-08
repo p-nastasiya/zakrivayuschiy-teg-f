@@ -40,3 +40,12 @@ function setButtonText(heart, button) {
   }
 }
 
+const modals = document.querySelectorAll('#modal-save');
+if (modals.length > 0) {
+  const closeButton = document.getElementById('modal-close-button');
+  closeButton.addEventListener('click', () => {
+    modals[0].close(); // Закрываем диалоговое окно
+  });
+} else {
+  console.error('Элементы с id "modal-save" не найдены в DOM-дереве.');
+}
