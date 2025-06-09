@@ -313,8 +313,8 @@ dialog:open {
 .modal {
 	border: 2px solid var(--border-buttom-color, #000);
 	padding: 0;
-	margin-left: clamp(1.063rem, 49.39vw - 10.513rem, 33.938rem);
-	margin-right: clamp(1.063rem, 49.39vw - 10.513rem, 33.938rem);
+	margin-left: clamp(1.063rem, 49.703vw - 10.587rem, 68.938rem);
+	margin-right: clamp(1.063rem, 49.703vw - 10.587rem, 68.938rem);
 }
 
 dialog::backdrop {
