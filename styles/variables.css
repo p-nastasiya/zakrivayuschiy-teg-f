@@ -14,7 +14,7 @@
 	--text-size: 18px;
 	/* размер шрифта */
 	/* Шрифт контента */
-	--img-width: clamp(375px, 700px, 1240px);
+	--img-width: clamp(371px, 700px, 1240px);
 
 	--watermark-shadow-color: #fff;
 	--hardlight-color: #000;

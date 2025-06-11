@@ -5,17 +5,13 @@
 	font-family: var(--font-family), 'Inter-Variable', sans-serif;
 	min-inline-size: 320px;
 	min-block-size: 100dvb;
-}
-
-.bg-gradient {
-	position: fixed;
 	object-fit: cover;
 	object-position: center;
-	background-image: var(--backround-image),
+	background-image: var(--backround-image), url(../images/background.png);
+	background-attachment: fixed; 
 		repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
 	inline-size: 100%;
 	block-size: 100%;
-	z-index: -1;
 }
 
 .header {
@@ -77,7 +73,7 @@ article {
 .image-box {
 	position: relative;
 	max-height: 696px;
-	border-bottom: 2px solid var(--contour-color, #000);
+	/* border-bottom: 2px solid var(--contour-color, #000); */
 }
 
 .card-image:hover {
@@ -388,7 +384,7 @@ dialog::backdrop {
 	}
 
 	.image-box {
-		max-height: 373px;
+		max-height: 371px;
 	}
 
 	.watermark {
@@ -400,11 +396,14 @@ dialog::backdrop {
 		height: 100%;
 	}
 
+	.card-content {
+		line-height: 21.2px;
+	}
+
 	.card__save-button {
 		inline-size: 306px;
 		min-height: 84px;
-		margin-top: 52px;
-		margin-bottom: 100px;
+		margin-top: 49px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
