@@ -67,14 +67,11 @@ article {
 	line-height: 33px;
 	padding-left: 10px;
 	border-bottom: 2px solid var(--contour-color, #000);
-
 }
 
 .image-box {
 	position: relative;
-	max-height: 696px;
-	/* border-bottom: 2px solid var(--contour-color, #000); */
-}
+	}
 
 .card-image:hover {
 	cursor: pointer;
@@ -87,6 +84,7 @@ article {
 .card-image {
 	max-width: var(--img-width);
 	width: -webkit-fill-available;
+	display: block;
 }
 
 /* при клике на картинке расстворяется фильтр */
@@ -348,7 +346,7 @@ dialog::backdrop {
 
 .modal-close-button {
 	border: 2px solid var(--border-buttom-color);
-	width: 100%;
+	width: clamp(15.813rem, 3.7559vw + 14.9327rem, 18.313rem);
 	height: 38px;
 	background-color: transparent;
 }
