@@ -20,7 +20,7 @@
 
 .header {
 	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
-	border: 2px solid;
+	border: 2px solid var(--border-buttom-color, #000);
 	background: var(--color-white);
 	display: flex;
 	justify-content: center;
@@ -49,13 +49,16 @@
 	margin-top: 50px;
 	inline-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
 }
+article {
+	border: none;
+}
 
 .card {
 	display: flex;
 	flex-direction: column;
 	background: var(--color-white, #fff);
 	border: 2px solid var(--border-buttom-color, #000);
-	margin-top: 51px;
+	margin-top: 50px;
 	height: auto;
 	max-width: var(--img-width);
 }
@@ -66,11 +69,14 @@
 	font-variation-settings: 'wght'var(--main-title-font-weight);
 	line-height: 33px;
 	padding-left: 10px;
+	border-bottom: 2px solid var(--contour-color, #000);
+
 }
 
 .image-box {
 	position: relative;
-	max-height: 698px;
+	max-height: 696px;
+	border-bottom: 2px solid var(--contour-color, #000);
 }
 
 .card-image:hover {
@@ -84,8 +90,6 @@
 .card-image {
 	max-width: var(--img-width);
 	width: -webkit-fill-available;
-	border-bottom: 2px solid var(--contour-color, #000);
-	border-top: 2px solid var(--contour-color, #000);
 }
 
 /* при клике на картинке расстворяется фильтр */
@@ -185,12 +189,12 @@
 	font-family: var(--font-family);
 	font-size: var(--text-size);
 	line-height: var(--main-text-line-height);
-	padding: 25px 25px 27px 25px;
+	padding: 25px;
+	border-top: 2px solid var(--contour-color, #000);
 }
 
 .card__add {
-	padding-top: 0px;
-	padding-bottom: 25px;
+	padding-top: 25px;
 }
 
 .button-container {
