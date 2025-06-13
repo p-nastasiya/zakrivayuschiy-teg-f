@@ -40,10 +40,3 @@ function setButtonText(heart, button) {
   }
 }
 
-document.getElementById('save-button').addEventListener('click', () => {
-  document.getElementById('modal-save').showModal();
-});
-
-document.getElementById('modal-form').addEventListener('submit', (e) => {
-  e.preventDefault(); // Явно предотвращаем перезагрузку
-});
