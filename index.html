@@ -538,40 +538,35 @@
         </div>
       </article>
     </main>
-    <button
-      class="btn card__save-button"
-      type="button"
-      onclick="document.getElementById('modal-save').showModal()"
-      aria-controls="modal-save"
-    >
-      <svg class="floppy" width="21" height="21" viewBox="0 0 40 40">
-        <use href="./svg/floppy.svg#floppy-icon" fill="currentColor" />
-      </svg>
-      <span class="button__text">Сохранить на память</span>
-    </button>
+   <button
+  class="btn card__save-button"
+  type="button"
+  aria-controls="modal-save"
+  id="save-button" <!-- Добавляем ID для JS -->
+>
+  <svg class="floppy" width="21" height="21" viewBox="0 0 40 40">
+    <use href="./svg/floppy.svg#floppy-icon" fill="currentColor" />
+  </svg>
+  <span class="button__text">Сохранить на память</span>
+</button>
 
-    <dialog class="modal" id="modal-save" aria-labelledby="modal-texts">
-      <div class="modal__content">
-        <form method="dialog">
-          <div class="modal__content-grupp">
-            <svg
-              class="floppy-modal"
-              width="39"
-              height="39"
-              viewBox="0 0 40 40"
-            >
-              <use href="./svg/floppy.svg#floppy-icon" fill="currentColor" />
-            </svg>
-            <p class="modal-text" id="modal-texts">
-              Вставьте дискету, чтобы продолжить
-            </p>
-          </div>
-          <button class="btn modal-close-button" type="submit">
-            <span class="button__text">OK</span>
-          </button>
-        </form>
+<dialog class="modal" id="modal-save" aria-labelledby="modal-texts">
+  <div class="modal__content">
+    <form method="dialog" id="modal-form"> <!-- Добавляем ID формы -->
+      <div class="modal__content-grupp">
+        <svg class="floppy-modal" width="39" height="39" viewBox="0 0 40 40">
+          <use href="./svg/floppy.svg#floppy-icon" fill="currentColor" />
+        </svg>
+        <p class="modal-text" id="modal-texts">
+          Вставьте дискету, чтобы продолжить
+        </p>
       </div>
-    </dialog>
+      <button class="btn modal-close-button" type="submit">
+        <span class="button__text">OK</span>
+      </button>
+    </form>
+  </div>
+</dialog>
 
     <script src="./scripts/like.js"></script>
   </body>
