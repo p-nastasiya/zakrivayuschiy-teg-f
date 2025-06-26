@@ -3,11 +3,12 @@
 	flex-direction: column;
 	align-items: center;
 	font-family: var(--font-family), 'Inter-Variable', sans-serif;
+	font-variation-settings: var(--text-font-weight), 'wght'400;
 	min-inline-size: 320px;
 	min-block-size: 100dvb;
 	background-position: center;
-	/* Градиентный фон (не SVG!) */
-	background: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%), var( --background-image, url('../images/background.png'));
+	background-color: #f5f5f5;
+	background-image: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%), var(--background-image, url('../images/background.png'));
 	background-attachment: fixed;
 	background-size: cover;
 	inline-size: 100%;
@@ -15,7 +16,7 @@
 }
 
 .header {
-	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
+	font-family: var(--second-family), 'PressStart2P', sans-serif;
 	border: 2px solid var(--border-buttom-color, #000);
 	background: var(--color-white);
 	display: flex;
@@ -23,11 +24,8 @@
 	align-items: center;
 	flex-direction: column;
 	margin: clamp(100px, 10vw, 100px) 0 0 0;
-	/* Отступ сверху */
 	block-size: clamp(368px, 40vh, 368px);
-	/* Высота хедера */
 	inline-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
-	/* Ширина хедера */
 }
 
 .header__main-title {
@@ -55,13 +53,12 @@ article {
 	flex-direction: column;
 	background: var(--color-white, #fff);
 	border: 2px solid var(--border-buttom-color, #000);
-	margin-top: 50px;
+	margin-top: 49px;
 	height: auto;
 	max-width: var(--img-width);
 }
 
 .title {
-	min-height: 33px;
 	font-size: var(--text-size);
 	font-variation-settings: 'wght'var(--main-title-font-weight);
 	line-height: 33px;
@@ -82,10 +79,11 @@ article {
 }
 
 .card-image {
-	max-width: var(--img-width);
+	max-width: 100%;
 	width: -webkit-fill-available;
 	display: block;
 }
+
 
 /* при клике на картинке расстворяется фильтр */
 .normcontrast {
@@ -185,11 +183,11 @@ article {
 	font-size: var(--text-size);
 	line-height: var(--main-text-line-height);
 	padding: 25px;
-	border-top: 2px solid var(--contour-color, #000);
+	border-top: 1px solid var(--contour-color, #000);
 }
 
-.card__add {
-	padding-top: 25px;
+p+p {
+	margin-top: 27px;
 }
 
 .button-container {
@@ -204,15 +202,13 @@ article {
 .btn {
 	position: relative;
 	display: inline-flex;
-	/* Используем flex для выравнивания иконки и текста */
 	align-items: center;
 	justify-content: center;
 	color: var(--text-color-black, #000);
-	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
+	font-family: var(--second-family), 'PressStart2P', sans-serif;
 	font-size: var(--buttom-text-font-size, 14px);
 	border: 2px solid var(--border-buttom-color, #000);
 	background: var(--color-white, #fff);
-	/* Чётко задаём фон */
 	overflow: hidden;
 }
 
@@ -220,7 +216,6 @@ article {
 	content: '';
 	position: absolute;
 	inset: 0;
-	/* Заменяет top/left/width/height */
 	background: var(--bg-color, #000);
 	transform: translateX(-100%);
 	transition: transform 0.5s ease-in-out;
@@ -235,30 +230,21 @@ article {
 .floppy {
 	position: relative;
 	z-index: 2;
-	color: var(--text-color-black, #000);
-	/* Исходный цвет */
 	transition: color 0.3s ease;
-	align-items: center;
+	align-self: center;
+	color: #000;
 }
 
 .btn:hover .button__text,
 .btn:hover .floppy {
-	color: var(--text-color-white, #fff);
-	/* Цвет при наведении */
+	mix-blend-mode: difference;
+	color: var(--color-white, #fff);
 }
 
-/* Убираем mix-blend-mode и работаем с цветами напрямую , дело в том что я неделю сдела и разбиралась с mix-blend-mode, у меня так ничего и не вышло.*/
 .floppy {
 	width: 21px;
 	height: 21px;
 	flex-shrink: 0;
-	--icon-color: #000;
-}
-
-.btn:hover .floppy {
-	filter: invert(1);
-	/* Инвертирует цвета иконки */
-	--icon-color: #fff;
 }
 
 .card__like-button-icon {
@@ -309,19 +295,16 @@ article {
 /* Диалоговое окно */
 dialog:open {
 	z-index: 1;
-	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
+	font-family: var(--second-family), 'PressStart2P', sans-serif;
 	font-weight: var(--main-title-font-weight);
 	font-size: var(--buttom-text-font-size, 14px);
 	justify-items: center;
 	align-content: center;
-	border: none;
 }
 
 .modal {
 	border: 2px solid var(--border-buttom-color, #000);
 	padding: 0;
-	margin-left: clamp(1.063rem, 49.703vw - 10.587rem, 68.938rem);
-	margin-right: clamp(1.063rem, 49.703vw - 10.587rem, 68.938rem);
 }
 
 dialog::backdrop {
@@ -329,9 +312,9 @@ dialog::backdrop {
 }
 
 .modal__content {
-	font-family: var(--second-family), 'PressStart2P-Regular', sans-serif;
+	font-family: var(--second-family), 'PressStart2P', sans-serif;
 	font-size: var(--buttom-text-font-size, 14px);
-	padding: 30px clamp(2.5rem, -0.939vw + 2.72rem, 1.875rem);
+	padding: 30px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -377,7 +360,6 @@ dialog::backdrop {
 		max-width: 375px;
 		margin-left: 0;
 		margin-right: 0;
-		margin-top: 50px;
 	}
 
 	.title {
