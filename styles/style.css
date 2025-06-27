@@ -11,8 +11,6 @@
 	background-image: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
 	background-attachment: fixed;
 	background-size: cover;
-	inline-size: 100%;
-	block-size: 100%;
 }
 
 .header {
@@ -232,13 +230,13 @@ p+p {
 	z-index: 2;
 	transition: color 0.3s ease;
 	align-self: center;
-	color: #000;
+	color: #fff;
+	mix-blend-mode: difference;
 }
 
 .btn:hover .button__text,
 .btn:hover .floppy {
 	mix-blend-mode: difference;
-	color: var(--color-white, #fff);
 }
 
 .floppy {
@@ -282,7 +280,7 @@ p+p {
 	inline-size: 339px;
 	min-height: 55px;
 	margin-top: 51px;
-	margin-bottom: 100px;
+	margin-bottom: 103px;
 	display: flex;
 	align-items: center;
 	justify-self: center;
@@ -347,7 +345,7 @@ dialog::backdrop {
 @media (width <=375px) {
 	.page {
 		width: 100%;
-		max-width: 375px;
+		max-width: 374px;
 	}
 
 	.header {
@@ -397,6 +395,10 @@ dialog::backdrop {
 	.floppy {
 		width: 28px;
 		height: 28px;
+	}
+
+	.modal__content {
+		padding: 30px 42px 30px 42px;
 	}
 
 }
